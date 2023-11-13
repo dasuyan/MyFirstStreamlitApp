@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.image("Flag_of_the_United_Kingdom_and_Germany.svg.png")
 st.title("Tłumacz angielsko-niemiecki")
 st.write("Ta aplikacja służy do tłumaczenia tekstu z języka angielskiego na niemiecki oraz określania wydźwięku "
          "emocjonalnego tekstu w języku angielskim. "
@@ -24,7 +25,9 @@ text = st.text_area(label="Wpisz tekst")
 answer = ""
 st.spinner()
 
-
+@st.cache
+def load_translator():
+    return
 with st.spinner(text='Przetwarzanie...'):
     if option == "Tłumaczenie tekstu (en -> de)":
         if st.button("Tłumacz", type="primary"):
